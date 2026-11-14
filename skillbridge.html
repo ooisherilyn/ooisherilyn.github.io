@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SkillBridge | Sherilyn Ooi</title>
+<link rel="stylesheet" href="fonts/fonts.css">
+<style>
+:root{--bg:#e0e0da;--paper:#f1f1ec;--navy:#253551;--slate:#6b7790;--purple:#7f73a1;--teal:#4a9a8a;--tealbg:#dcf1ec;--cream:#f4f0e8;--sun:#fdf3d9;--head:'Barlow Semi Condensed',system-ui,sans-serif;--body:'PT Serif',Georgia,serif}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--navy);font-family:var(--body);line-height:1.6}
+html[data-lang=en] [lang=de],html[data-lang=de] [lang=en]{display:none}
+main{max-width:1000px;margin:0 auto;padding:40px 16px}
+h1,h2,h3{font-family:var(--head);margin:0 0 .4em}h1{font-size:2.6rem;line-height:1.1}
+.top{display:flex;justify-content:space-between;align-items:center;max-width:1000px;margin:0 auto;padding:16px}
+.top a,.top button{font-family:var(--head);color:var(--navy);background:none;border:1px solid var(--navy);padding:4px 12px;cursor:pointer;text-decoration:none;font-size:1rem}
+.tag{display:inline-block;font-family:var(--head);background:var(--navy);color:var(--bg);padding:2px 10px;margin-bottom:12px}
+.phones{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px;margin:32px 0}
+figure{margin:0}figcaption{font-family:var(--head);color:var(--slate);margin-top:10px}
+.phone{background:var(--cream);border-radius:28px;border:8px solid var(--navy);padding:14px;font-family:system-ui,sans-serif;font-size:13px;color:#1f2a26;min-height:520px}
+.bar{text-align:center;color:var(--teal);font-weight:700;font-size:16px;margin-bottom:12px}
+.phone h4{font-size:19px;margin:6px 0 4px}.sub{color:#666;margin:0 0 10px}
+.c{background:#fff;border-radius:16px;padding:12px;margin-bottom:10px;box-shadow:0 1px 3px #0001}
+.chip{display:inline-block;background:var(--tealbg);color:#2b7567;font-weight:700;padding:3px 9px;border-radius:12px;margin:2px 2px 2px 0;font-size:11px}
+.m{float:right;background:var(--teal);color:#fff;border-radius:12px;padding:2px 8px;font-size:11px;font-weight:700}
+.ai{background:var(--sun);border:1px solid #ecd9a0;border-radius:16px;padding:12px;margin-bottom:10px}.ai b.l{color:#a07a1a}
+.btn{background:var(--teal);color:#fff;text-align:center;border-radius:20px;padding:10px;font-weight:700}
+.q{background:#f4f0e8;border-radius:10px;padding:8px;font-style:italic;margin-top:6px}
+.note{color:var(--slate);font-size:.9rem}
+</style></head>
+<body>
+<div class="top"><a href="jobs.html">← <span lang="en">Portfolio</span><span lang="de">Portfolio</span></a><button onclick="var h=document.documentElement;h.dataset.lang=h.dataset.lang==='en'?'de':'en'">EN / DE</button></div>
+<main>
+<span class="tag"><span lang="en">Miro AI hackathon · 2nd place</span><span lang="de">Miro-KI-Hackathon · 2. Platz</span></span>
+<h1>SkillBridge</h1>
+<p><span lang="en">A mobile prototype that shows career changers which roles their existing skills already fit, what to learn next, and what real transitions looked like. Built in a small team at the Miro AI hackathon (November 2026) using Miro AI and Lovable. We finished second.</span><span lang="de">Ein mobiler Prototyp, der Quereinsteigenden zeigt, zu welchen Rollen ihre vorhandenen Fähigkeiten bereits passen, was sie als Nächstes lernen sollten und wie echte Wechsel verliefen. Entstanden in einem kleinen Team beim Miro-KI-Hackathon (November 2026) mit Miro AI und Lovable. Wir belegten den zweiten Platz.</span></p>
+<p class="note"><span lang="en">The screens below are recreated from the prototype's content and styling because the live preview link expires. All role data and stories in the demo are simulated.</span><span lang="de">Die Screens unten sind aus Inhalt und Gestaltung des Prototyps nachgebaut, da der Vorschau-Link abläuft. Alle Rollendaten und Geschichten im Demo sind simuliert.</span></p>
+<div class="phones">
+<figure><div class="phone"><div class="bar">SkillBridge</div><h4>Your skills snapshot</h4><p class="sub">Find where your skills already fit.</p>
+<div class="c"><b>What you bring</b><br><span class="chip">Business Analysis</span><span class="chip">Stakeholder Communication</span><span class="chip">Excel &amp; Data Reporting</span><span class="chip">Project Coordination</span><span class="chip">Market Research</span></div>
+<div class="ai"><b class="l">✦ AI insight</b><br>Your background overlaps with 4 growing roles in Berlin. Closest fit: <b>Product Operations Analyst</b> (75% match).<br><small>Based on simulated role data — not live job listings.</small></div>
+<div class="btn">See my role matches →</div></div>
+<figcaption><span lang="en">1. Skills snapshot</span><span lang="de">1. Skill-Überblick</span></figcaption></figure>
+<figure><div class="phone"><div class="bar">SkillBridge</div><h4>Roles that fit your skills</h4>
+<div class="c"><b>Product Operations Analyst</b><span class="m">75%</span><br><span class="chip">Business Analysis</span><span class="chip">Project Coordination</span><br><small>To build: Process Design</small><br>Bridges product teams and business goals.<br><b style="color:var(--teal)">See real transitions →</b></div>
+<div class="c"><b>Data &amp; Insights Coordinator</b><span class="m">67%</span><br><small>To build: SQL</small></div>
+<div class="c"><b>Customer Success Manager</b><span class="m">67%</span><br><small>To build: Customer Empathy</small></div>
+<div class="c"><b>Strategy &amp; Operations Associate</b><span class="m">60%</span><br><small>To build: Financial Modelling, Presentation</small></div></div>
+<figcaption><span lang="en">2. Role matches with the gap to close</span><span lang="de">2. Passende Rollen mit der Lücke, die zu schließen ist</span></figcaption></figure>
+<figure><div class="phone"><div class="bar">SkillBridge</div><h4>People who made this move</h4><p class="sub">Business background → Product Operations Analyst in Berlin</p>
+<div class="c"><b>Mia K.</b><br><small>Business grad → Product Ops Analyst, Berlin fintech</small><div class="q">“I didn't need to learn to code — I needed to learn the product vocabulary.”</div></div>
+<div class="c"><b>David S.</b><br><small>Marketing &amp; business → Operations Lead, Berlin SaaS</small><div class="q">“Once I framed my Excel work as data ops, interviews changed completely.”</div></div>
+<div class="ai"><b class="l">✦ AI insight</b><br>Most transitions took 3–6 months. The common first step: a short course and one conversation with someone in the role.</div></div>
+<figcaption><span lang="en">3. Real-style transition stories and next step</span><span lang="de">3. Wechselgeschichten und nächster Schritt</span></figcaption></figure>
+</div>
+<h2><span lang="en">What this shows</span><span lang="de">Was das zeigt</span></h2>
+<p><span lang="en">I was part of the team that built the prototype with Miro AI, working alongside a designer, and I pitched the product. The idea: turn a fuzzy problem (career changers do not know which roles fit) into a clear flow in a day: skills, matches with gaps, peer proof, one next step.</span><span lang="de">Ich war Teil des Teams, das den Prototyp mit Miro AI gebaut hat, zusammen mit einer Designerin bzw. einem Designer, und habe das Produkt gepitcht. Die Idee: ein diffuses Problem (Quereinsteigende wissen nicht, welche Rollen passen) wird an einem Tag zu einem klaren Ablauf: Skills, Matches mit Lücken, Peer-Belege, ein nächster Schritt.</span></p>
+</main></body></html>

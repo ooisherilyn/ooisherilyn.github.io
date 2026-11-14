@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sherilyn Ooi</title>
+<link rel="stylesheet" href="fonts/fonts.css">
+<style>
+:root{--bg:#e0e0da;--paper:#f1f1ec;--navy:#253551;--slate:#6b7790;--purple:#7f73a1;--head:'Barlow Semi Condensed',system-ui,sans-serif;--body:'PT Serif',Georgia,serif}
+body{margin:0;background:var(--bg);color:var(--navy);font-family:var(--body);line-height:1.6;font-size:18px}
+html[data-lang=en] [lang=de],html[data-lang=de] [lang=en]{display:none}
+.top{display:flex;justify-content:flex-end;max-width:900px;margin:0 auto;padding:16px}
+.top button{font-family:var(--head);color:var(--navy);background:none;border:1px solid var(--navy);padding:4px 12px;cursor:pointer;font-size:1rem}
+main{max-width:900px;margin:0 auto;padding:24px 16px 60px}
+h1{font-family:var(--head);font-size:clamp(2.2rem,6vw,3.4rem);margin:0 0 .2em}
+.sub{font-size:1.2rem;color:var(--slate);margin-bottom:32px}
+.doors{display:grid;gap:20px;grid-template-columns:1fr 1fr}
+a.door{display:block;background:var(--paper);border-top:4px solid var(--purple);padding:26px;color:var(--navy);text-decoration:none}
+a.door:hover{background:#fff}.door h2{font-family:var(--head);margin:0 0 .3em}
+@media(max-width:700px){.doors{grid-template-columns:1fr}}
+footer{max-width:900px;margin:0 auto;padding:0 16px 40px;font-size:.9rem;color:var(--slate)}footer a{color:var(--slate)}
+</style></head><body>
+<div class="top"><button onclick="var h=document.documentElement;h.dataset.lang=h.dataset.lang==='en'?'de':'en';try{localStorage.setItem('lang',h.dataset.lang)}catch(e){}">EN / DE</button></div>
+<main>
+<h1>Sherilyn Ooi</h1>
+<p class="sub"><span lang="en">Product, AI adoption and learning, based in Berlin.</span><span lang="de">Produkt, KI-Einführung und Lernen, Berlin.</span></p>
+<div class="doors">
+<a class="door" href="jobs.html"><h2><span lang="en">Work with me on your team</span><span lang="de">Mit mir im Team arbeiten</span></h2><p><span lang="en">Product management, AI adoption, learning and leadership development. Selected projects and background.</span><span lang="de">Produktmanagement, KI-Einführung, Lern- und Führungskräfteentwicklung. Ausgewählte Projekte und Hintergrund.</span></p></a>
+<a class="door" href="freelance.html"><h2><span lang="en">Book a workshop</span><span lang="de">Workshop buchen</span></h2><p><span lang="en">Practical workshops for AI adoption, teams in change and new managers.</span><span lang="de">Praxisnahe Workshops für KI-Einführung, Teams im Wandel und neue Führungskräfte.</span></p></a>
+</div></main>
+<footer><a href="impressum.html">Impressum</a> · <a href="datenschutz.html"><span lang="en">Privacy</span><span lang="de">Datenschutz</span></a></footer>
+<script>try{var l=new URLSearchParams(location.search).get('lang')||localStorage.getItem('lang');if(l==='de'||l==='en')document.documentElement.dataset.lang=l;else if((navigator.language||'').slice(0,2)==='de')document.documentElement.dataset.lang='de'}catch(e){}</script>
+</body></html>

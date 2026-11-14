@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Impressum | Sherilyn Ooi</title>
+<link rel="stylesheet" href="fonts/fonts.css">
+<style>
+:root{--bg:#e0e0da;--paper:#f1f1ec;--navy:#253551;--slate:#6b7790;--head:'Barlow Semi Condensed',system-ui,sans-serif;--body:'PT Serif',Georgia,serif}
+body{margin:0;background:var(--bg);color:var(--navy);font-family:var(--body);line-height:1.6;font-size:17px}
+html[data-lang=en] [lang=de],html[data-lang=de] [lang=en]{display:none}
+.top{display:flex;justify-content:space-between;max-width:760px;margin:0 auto;padding:16px}
+.top a,.top button{font-family:var(--head);color:var(--navy);background:none;border:1px solid var(--navy);padding:4px 12px;cursor:pointer;text-decoration:none;font-size:1rem}
+main{max-width:760px;margin:0 auto;padding:16px 16px 60px}h1,h2{font-family:var(--head)}h1{font-size:2.2rem}h2{font-size:1.3rem;margin-top:1.8em}
+a{color:var(--navy)}
+</style></head><body>
+<div class="top"><a href="freelance.html">← <span lang="en">Back</span><span lang="de">Zurück</span></a><button onclick="var h=document.documentElement;h.dataset.lang=h.dataset.lang==='en'?'de':'en';try{localStorage.setItem('lang',h.dataset.lang)}catch(e){}">EN / DE</button></div>
+<main>
+<h1>Impressum</h1>
+<p lang="en"><em>Legal notice under German law (§ 5 DDG). The German text is the legally binding version.</em></p>
+<h2>Angaben gemäß § 5 DDG</h2>
+<p>Sherilyn Ooi Su Ying<br>Mulackstr. 5<br>10119 Berlin<br>Deutschland</p>
+<h2><span lang="de">Kontakt</span><span lang="en">Contact</span></h2>
+<p>E-Mail: <a class="em" href="#">ooisherilyn (at) gmail.com</a><br><span lang="de">Kontaktformular: siehe Kontaktbereich auf der Website</span><span lang="en">Contact form: see the contact section of the website</span></p>
+<h2 lang="de">Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2><h2 lang="en">Responsible for content (§ 18 (2) MStV)</h2>
+<p>Sherilyn Ooi Su Ying, <span lang="de">Anschrift wie oben</span><span lang="en">address as above</span></p>
+<h2 lang="de">Haftung für Inhalte und Links</h2><h2 lang="en">Liability for content and links</h2>
+<p lang="de">Die Inhalte dieser Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität übernehme ich jedoch keine Gewähr. Für Inhalte externer Links sind ausschließlich deren Betreiber verantwortlich.</p>
+<p lang="en">The content of these pages was created with great care, but I cannot guarantee that it is correct, complete or up to date. The operators of linked external sites are solely responsible for their content.</p>
+
+</main>
+<script>try{var l=new URLSearchParams(location.search).get('lang')||localStorage.getItem('lang');if(l==='de'||l==='en')document.documentElement.dataset.lang=l;else if((navigator.language||'').slice(0,2)==='de')document.documentElement.dataset.lang='de'}catch(e){}</script>
+<script>/* email assembled in the browser to avoid scraping */
+(function(){var e=document.querySelectorAll('.em');e.forEach(function(x){var a='ooisherilyn'+'@'+'gmail.com';x.textContent=a;x.href='mailto:'+a})})();</script>
+</body></html>
