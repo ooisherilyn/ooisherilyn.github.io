@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="fonts/fonts.css">
 <!-- Analytics (cookieless, EU): add Plausible or Umami snippet here once the domain exists. -->
 <style>
-  :root{--bg:#e0e0da;--paper:#f1f1ec;--navy:#253551;--slate:#6b7790;--purple:#7f73a1;--line:#c9cac4;
+  :root{--bg:#e0e0da;--paper:#f1f1ec;--navy:#253551;--slate:#55607a;--purple:#7f73a1;--purple-text:#5d5280;--line:#c9cac4;
     --head:'Barlow Semi Condensed',system-ui,sans-serif;--body:'PT Serif',Georgia,serif}
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
@@ -16,17 +16,20 @@
   .wrap{max-width:960px;margin:0 auto;padding:0 20px}
   header{position:sticky;top:0;background:var(--bg);border-bottom:1px solid var(--line);z-index:5}
   header .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-top:12px;padding-bottom:12px}
-  .brand{font-family:var(--head);font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+  .brand{font-family:var(--head);font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:inherit;text-decoration:none}
   nav a{font-family:var(--head);font-weight:600;color:var(--navy);text-decoration:none;margin-right:16px}
-  .lang button{font-family:var(--head);font-weight:600;border:1px solid var(--navy);background:transparent;color:var(--navy);padding:4px 12px;cursor:pointer}
+  .lang button{font-family:var(--head);font-weight:600;border:1px solid var(--navy);background:transparent;color:var(--navy);padding:8px 14px;min-height:40px;cursor:pointer}
   .lang button[aria-pressed=true]{background:var(--navy);color:var(--bg)}
   h1,h2,h3{font-family:var(--head);line-height:1.15;margin:0 0 .5em}
   h1{font-size:clamp(2.2rem,6vw,3.6rem);font-weight:700}
   h2{font-size:1.9rem;font-weight:700}
   h3{font-size:1.35rem;font-weight:600}
-  .eyebrow{font-family:var(--head);color:var(--purple);font-weight:600;letter-spacing:.12em;text-transform:uppercase;font-size:.85rem}
+  .eyebrow{font-family:var(--head);color:var(--purple-text);font-weight:600;letter-spacing:.12em;text-transform:uppercase;font-size:.85rem}
   section{padding:56px 0;border-top:1px solid var(--line)}
   .hero{padding:72px 0 56px;border-top:0}
+  .hero-grid{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:48px;align-items:center}
+  .portrait{margin:0}.portrait img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 20%;display:block;box-shadow:12px 12px 0 var(--purple)}
+  @media(max-width:860px){.hero-grid{grid-template-columns:1fr;gap:28px}.portrait{order:2;max-width:240px}.portrait img{box-shadow:8px 8px 0 var(--purple)}}
   .lead{font-size:1.2rem;max-width:44em}
   .btn{display:inline-block;background:var(--navy);color:var(--bg);font-family:var(--head);font-weight:600;padding:12px 22px;text-decoration:none;margin:8px 8px 0 0}
   .btn.alt{background:transparent;color:var(--navy);border:1px solid var(--navy)}
@@ -35,7 +38,7 @@
   .card h3{font-size:2rem;margin-bottom:.1em}
   .case{background:var(--paper);padding:28px;margin-bottom:28px;border-left:6px solid var(--purple)}
   .case dl{margin:0;display:grid;grid-template-columns:130px 1fr;gap:6px 16px}
-  .case dt{font-family:var(--head);font-weight:700;color:var(--purple);text-transform:uppercase;font-size:.85rem;letter-spacing:.08em;padding-top:4px}
+  .case dt{font-family:var(--head);font-weight:700;color:var(--purple-text);text-transform:uppercase;font-size:.85rem;letter-spacing:.08em;padding-top:4px}
   .case dd{margin:0}
   .case ul{margin:0;padding-left:1.1em}
   .meta{font-family:var(--head);color:var(--slate)}
@@ -45,6 +48,7 @@
   .tl li{display:grid;grid-template-columns:150px 1fr;gap:16px;padding:12px 0;border-bottom:1px solid var(--line)}
   .tl .when{font-family:var(--head);color:var(--slate)}
   footer{padding:40px 0;border-top:1px solid var(--line);font-size:.95rem}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--purple);outline-offset:2px}
   html[data-lang="en"] [lang="de"]{display:none}
   html[data-lang="de"] [lang="en"]{display:none}
   @media(max-width:620px){body{font-size:17px}nav{display:none}.case dl{grid-template-columns:1fr}.tl li{grid-template-columns:1fr;gap:2px}}
@@ -52,7 +56,7 @@
 </head>
 <body>
 <header><div class="wrap">
-  <div class="brand">Sherilyn Ooi</div>
+  <a class="brand" href="index.html" aria-label="Sherilyn Ooi, home">Sherilyn Ooi</a>
   <nav><a href="#work"><span lang="en">Selected work</span><span lang="de">Ausgewählte Projekte</span></a><a href="#ai"><span lang="en">AI</span><span lang="de">KI</span></a><a href="#path"><span lang="en">Path</span><span lang="de">Werdegang</span></a><a href="#contact"><span lang="en">Contact</span><span lang="de">Kontakt</span></a></nav>
   <div class="lang" role="group" aria-label="Language">
     <button type="button" data-set="en" aria-pressed="true">EN</button><button type="button" data-set="de" aria-pressed="false">DE</button>
@@ -60,13 +64,15 @@
 </div></header>
 
 <main class="wrap">
-<section class="hero">
+<section class="hero"><div class="hero-grid"><div>
   <p class="eyebrow"><span lang="en">Product · Learning · AI adoption · Berlin</span><span lang="de">Produkt · Lernen · KI-Adoption · Berlin</span></p>
   <h1><span lang="en">I turn messy problems into clear roadmaps, and help people actually use what we build.</span><span lang="de">Ich mache aus unübersichtlichen Problemen klare Roadmaps und helfe Menschen, das Gebaute auch wirklich zu nutzen.</span></h1>
-  <p class="lead"><span lang="en">Four years as a product and learning delivery manager at an e-commerce software company, 30+ public workshops and talks, an MBA and an ICF coaching credential. I enjoy deep-diving into user pain points, prioritising hard under limits, and teaching teams to work with AI.</span><span lang="de">Vier Jahre als Produkt- und Learning-Delivery-Managerin bei einem E-Commerce-Softwareunternehmen, über 30 öffentliche Workshops und Vorträge, ein MBA und eine ICF-Coaching-Zertifizierung. Ich tauche gern in die Probleme von Nutzer:innen ein, priorisiere konsequent bei knappen Ressourcen und bringe Teams bei, mit KI zu arbeiten.</span></p>
+  <p class="lead"><span lang="en">Four years as a product and learning delivery manager at an e-commerce software company, 30+ public workshops and talks, an MBA and an ICF coaching credential. I enjoy deep-diving into user pain points, prioritising hard under limits, and teaching teams to work with AI.</span><span lang="de">Vier Jahre Produkt- und Learning-Delivery-Managerin bei commercetools, einem E-Commerce-Softwareunternehmen, über 30 öffentliche Workshops und Vorträge, ein MBA und eine ICF-Coaching-Zertifizierung. Ich tauche gerne in die Probleme von Nutzer:innen ein, priorisiere konsequent bei knappen Ressourcen und bringe Teams bei, mit KI zu arbeiten.</span></p>
   <a class="btn" href="#work"><span lang="en">See selected work</span><span lang="de">Projekte ansehen</span></a>
   <a class="btn alt" href="#contact"><span lang="en">Get in touch</span><span lang="de">Kontakt aufnehmen</span></a>
-</section>
+</div>
+<figure class="portrait"><img src="assets/photos/headshot.jpg" width="800" height="1000" alt="Portrait of Sherilyn Ooi" fetchpriority="high"></figure>
+</div></section>
 
 <section id="numbers">
   <div class="grid">
@@ -82,15 +88,15 @@
   <h2><span lang="en">Four stories: problem, what I did, result</span><span lang="de">Vier Geschichten: Problem, mein Beitrag, Ergebnis</span></h2>
 
   <article class="case">
-    <h3><span lang="en">1. Inheriting a team with “a bajillion things to improve”</span><span lang="de">1. Ein Team mit unzähligen Baustellen übernehmen</span></h3>
+    <h3><span lang="en">1. From stalled to shipping: rebuilding a product team’s delivery</span><span lang="de">1. Vom Stillstand zur Lieferfähigkeit: ein Produktteam neu aufstellen</span></h3>
     <p class="meta"><span class="tag"><span lang="en">Product delivery</span><span lang="de">Produktentwicklung</span></span> commercetools · 2021–2025</p>
     <dl>
       <dt><span lang="en">Problem</span><span lang="de">Problem</span></dt>
-      <dd><span lang="en">An 11-person cross-functional team worked reactively, with too many priorities and tight limits, on a pricing and promotions feature for an e-commerce platform.</span><span lang="de">Ein funktionsübergreifendes Team mit 11 Personen arbeitete reaktiv, mit zu vielen Prioritäten und knappen Ressourcen, an einer Preis- und Promotions-Funktion für eine E-Commerce-Plattform.</span></dd>
+      <dd><span lang="en">An 11-person cross-functional team behind a pricing and promotions feature for an e-commerce platform had not shipped anything in about 18 months, with too many competing priorities and a vision that needed rethinking.</span><span lang="de">Ein funktionsübergreifendes Team mit 11 Personen hinter einer Preis- und Promotions-Funktion für eine E-Commerce-Plattform hatte seit rund 18 Monaten nichts mehr ausgeliefert, mit zu vielen konkurrierenden Prioritäten und einer Vision, die neu gedacht werden musste.</span></dd>
       <dt><span lang="en">What I did</span><span lang="de">Mein Beitrag</span></dt>
-      <dd><ul lang="en"><li>Interviewed 30+ customers for product discovery to prioritise features</li><li>Moved the team from task-chasing to predictable, scalable ways of working</li><li>Advised customers and senior stakeholders on best practice</li><li>Grew the team by 50%, owning screening, interviews and hiring decisions, including engineers</li></ul><ul lang="de"><li>Über 30 Kundeninterviews zur Produktentdeckung geführt, um Features zu priorisieren</li><li>Das Team von reaktiver Aufgabenjagd zu verlässlichen, skalierbaren Arbeitsweisen geführt</li><li>Kund:innen und Führungskräfte zu Best Practices beraten</li><li>Das Team um 50 % vergrößert, inkl. Auswahl, Interviews und Einstellungsentscheidungen, auch für Entwickler:innen</li></ul></dd>
+      <dd><ul lang="en"><li>Revised the product vision, using 30+ customer interviews to decide what to build first</li><li>Formalised product delivery, moving the team from reactive task-chasing to predictable, scalable ways of working</li><li>Advised customers and senior stakeholders on best practice</li><li>Grew the team by 50%, owning screening, interviews and hiring decisions, including engineers</li></ul><ul lang="de"><li>Die Produktvision überarbeitet und mit über 30 Kundeninterviews priorisiert, was zuerst gebaut wird</li><li>Die Produktentwicklung formalisiert und das Team von reaktiver Aufgabenjagd zu verlässlichen, skalierbaren Arbeitsweisen geführt</li><li>Kund:innen und Führungskräfte zu Best Practices beraten</li><li>Das Team um 50 % vergrößert, inkl. Auswahl, Interviews und Einstellungsentscheidungen, auch für Entwickler:innen</li></ul></dd>
       <dt><span lang="en">Result</span><span lang="de">Ergebnis</span></dt>
-      <dd><span lang="en">Shipped a feature that scaled platform capacity 500×; product adoption rose from 30% to 50% across key markets.</span><span lang="de">Ein Feature ausgeliefert, das die Plattformkapazität um das 500-Fache steigerte; die Produktnutzung stieg in wichtigen Märkten von 30 % auf 50 %.</span></dd>
+      <dd><span lang="en">Went from no releases in 18 months to about three features per quarter, including one that scaled platform capacity 500×; product adoption rose from 30% to 50% across key markets.</span><span lang="de">Von keinem Release in 18 Monaten zu etwa drei Features pro Quartal, darunter eines, das die Plattformkapazität um das 500-Fache steigerte; die Produktnutzung stieg in wichtigen Märkten von 30 % auf 50 %.</span></dd>
     </dl>
   </article>
 
@@ -144,8 +150,7 @@
     <div class="card"><h3 style="font-size:1.35rem"><span lang="en">Mentor-matching prototype</span><span lang="de">Prototyp für Mentoring-Matching</span></h3><p><span lang="en">A prototype for matching mentors and mentees, from my work on a mentoring programme.</span><span lang="de">Ein Prototyp zum Matching von Mentor:innen und Mentees aus meiner Arbeit an einem Mentoring-Programm.</span></p></div>
     <div class="card"><h3 style="font-size:1.35rem"><span lang="en">SkillBridge (Miro AI hackathon, 2nd place)</span><span lang="de">SkillBridge (Miro-KI-Hackathon, 2. Platz)</span></h3><p><span lang="en">A mobile prototype that shows career changers which roles fit their skills and what real transitions looked like. <a href="skillbridge.html">See the screens</a>.</span><span lang="de">Ein mobiler Prototyp, der Quereinsteigenden zeigt, welche Rollen zu ihren Fähigkeiten passen und wie echte Wechsel verliefen. <a href="skillbridge.html">Screens ansehen</a>.</span></p></div>
   </div>
-  <p class="note"><span lang="en">Screenshots and walkthroughs to be added.</span><span lang="de">Screenshots und Walkthroughs folgen.</span></p>
-</section>
+  </section>
 
 <section id="strategy">
   <p class="eyebrow"><span lang="en">Strategy foundations</span><span lang="de">Strategische Grundlagen</span></p>
@@ -162,7 +167,7 @@
   <p class="eyebrow"><span lang="en">Path</span><span lang="de">Werdegang</span></p>
   <h2><span lang="en">Short version</span><span lang="de">Kurzfassung</span></h2>
   <ul class="tl">
-    <li><span class="when">2019 – now</span><span><strong>SherConsults</strong>, <span lang="en">People Development Specialist | Corporate Trainer (freelance)</span><span lang="de">People Development Specialist | Corporate Trainerin (freiberuflich)</span></span></li>
+    <li><span class="when"><span lang="en">2019 – now</span><span lang="de">2019 – heute</span></span><span><strong>SherConsults</strong>, <span lang="en">People Development Specialist | Corporate Trainer (freelance)</span><span lang="de">People Development Specialist | Corporate Trainerin (freiberuflich)</span></span></li>
     <li><span class="when">2021 – 2025</span><span><strong>commercetools</strong>, <span lang="en">Learning and Product Delivery Manager</span><span lang="de">Learning and Product Delivery Managerin</span></span></li>
     <li><span class="when">2020 – 2021</span><span><strong>Google</strong>, <span lang="en">Digital Transformation Facilitator (freelance)</span><span lang="de">Digital Transformation Facilitator (freiberuflich)</span></span></li>
     <li><span class="when">2019 – 2020</span><span><strong>Google</strong>, <span lang="en">Accounts Coordinator, Large Customer Sales</span><span lang="de">Kundenkoordinatorin, Großkundenvertrieb</span></span></li>
@@ -179,7 +184,7 @@
   <a class="btn mail" href="#contact" data-subject="Hello">ooisherilyn (at) gmail.com</a>
   <a class="btn alt" href="https://www.linkedin.com/in/sherilynooi/" rel="noopener">LinkedIn</a>
   <p class="note" style="margin-top:20px"><span lang="en">Or use the contact form (it is processed by Google Forms, see the privacy notice):</span><span lang="de">Oder nutzen Sie das Kontaktformular (Verarbeitung über Google Forms, siehe Datenschutzerklärung):</span></p>
-  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdUksY0whNBCwvub4EhUKR4pakfTNyoDpqbZ3OjsNPMpITAcQ/viewform?embedded=true" title="Contact form" width="100%" height="720" frameborder="0" loading="lazy" style="border:0;background:#fff;max-width:640px;display:block">Loading…</iframe>
+  <div style="background:#fff;padding:20px;max-width:720px;margin-top:12px;border-top:4px solid var(--purple)"><iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdUksY0whNBCwvub4EhUKR4pakfTNyoDpqbZ3OjsNPMpITAcQ/viewform?embedded=true" title="Contact form" width="100%" height="720" frameborder="0" loading="lazy" style="border:0;display:block">Loading…</iframe></div>
 </section>
 </main>
 <footer><div class="wrap note">Sherilyn Ooi · Berlin · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html"><span lang="en">Privacy</span><span lang="de">Datenschutz</span></a></div></footer>
